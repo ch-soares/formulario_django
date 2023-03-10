@@ -1,0 +1,54 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    padding: 0;
+    margin: 0;
+    color: white; 
+    background: linear-gradient(90deg, rgb(12, 34, 9) 0%, rgb(1, 1, 10) 35%, rgb(2, 28, 53) 100%);
+}
+
+.mensagem {
+    text-align: center;
+    margin: 20px;
+    background: linear-gradient(90deg, rgb(12, 34, 9) 0%, rgb(1, 1, 10) 35%, rgb(2, 28, 53) 100%);
+}
+
+input, textarea{
+    padding: 10px;
+    width: 300px;
+    border-radius: 7px;
+}
+
+input {
+    font-size: 15px;
+}
+
+.sexo input{
+    width: auto;
+}
+
+.tecnologias input{
+    width: auto;
+}
+
+.area-interesse {
+    width: auto;
+}
+
+.area-interesse select{
+    padding: 10px;
+    width: 300px;
+    border-radius: 7px;
+}
+
+button {
+    background-color: rgb(6, 85, 6);
+    color: aliceblue;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;
+    font-size: 15px;
+}
+
+.erros {
+    color: red;   
+}

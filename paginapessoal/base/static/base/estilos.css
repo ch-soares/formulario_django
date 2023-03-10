@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+    padding: 0;
+    margin: 0;
+    /* color: #293651; */
+    color: aliceblue; 
+    background: linear-gradient(90deg, rgb(12, 34, 9) 0%, rgb(1, 1, 10) 35%, rgb(2, 28, 53) 100%);  
+    
+}
+
+.container {
+    background: linear-gradient(90deg, rgb(12, 34, 9) 0%, rgb(1, 1, 10) 35%, rgb(2, 28, 53) 100%);
+    width: 1000px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.menu {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    /* background-color: rgb(24, 44, 24); */
+    /* color: rgb(24, 44, 24); */
+}
+
+.redes-sociais img{
+    width: 40px;
+    padding: auto;
+}
+
+.redes-sociais img:hover, img:focus {
+    transition-duration: 1s;
+    width: 50px;
+    transition-timing-function: linear;
+}
+
+h3 {
+    /* color: rgb(59, 83, 59); */
+    font-weight: 100;
+}
+
+h1 {
+    border-bottom: green 1px solid;
+    padding-bottom: 10px;
+    /* color: rgb(65, 100, 65); */
+}
+
+h2 {
+    font-weight: 100;
+    font-size: 17px;
+}
+
+.menu li {
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: #293651;
+    color: white;
+}
+
+.apresentacao{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.poema-foto {
+    display: flex;
+    justify-content: center;
+    font-family: 'Shantell Sans', cursive;
+    color:rgb(235, 241, 239);
+    background: linear-gradient(90deg, rgb(12, 34, 9) 0%, rgb(1, 1, 10) 35%, rgb(2, 28, 53) 100%);  
+    border-radius: 10px;
+    
+}
+
+.poema-foto p {
+    padding: 20px;
+}
+
+.poema-foto img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 50%;
+    margin-top: 30px;
+}
+
+/* Animações */
+
+h1 {
+    animation-duration: 2s;
+    animation-name: nome;
+  }
+
+@keyframes nome {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+.poema-foto img{
+    animation-duration: 2s;
+    animation-name: poema-foto;
+  }
+
+@keyframes poema-foto {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+.poema-foto{
+    animation-duration: 2s;
+    animation-name: poema-foto;
+  }
+
+@keyframes poema-foto {
+    from {
+      margin-top: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+.redes-sociais img{
+    animation-duration: 2s;
+    animation-name: redes-sociais;
+  }
+
+@keyframes redes-sociais {
+    from {
+      margin-left: 100%;
+      /* width: 300%; */
+    }
+  
+    to {
+      margin-left: 0%;
+      /* width: 100%; */
+    }
+  }

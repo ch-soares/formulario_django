@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Henrique Soares</title>
+    <link rel="stylesheet" href="{% static 'base/estilos.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <ul class="menu">
+                <li>Heróis Favoritos</li>
+                <li>Pessoas Admiráveis</li>
+                <li>Poemas Autorais</li>
+                <li>Poemas que Inspiram</li>
+                <li>Minas Gerais</li>
+                <li>Músicas</li>
+                <li>Fotos</li>
+                <li>Videos</li>
+            </ul>
+        </header>
+        <div class="apresentacao">
+            <div>
+                <h3>Olá, muito prazer! Sou o</h3>
+                <h1>Carlos Henrique Soares</h1>
+                <h2>Sou apaixonado em resolver problemas e melhorar o trabalho das pessoas por meio da tecnologia. <br>
+                Ávido por aprender, ouvir histórias, escutar músicas e viajar.
+                Amo amar a minha família e meus amigos.</h2>
+                <p>De vez em quando arrisco-me a escrever versos, como estes:</p>
+            </div>
+            <div class="redes-sociais">
+                <p><a href="https://www.linkedin.com/in/ch-soares/" target="_blank"><img src="{% static 'base/icone-linkedin.png' %}" alt=""></a></p>
+                <p><a href="https://www.google.com" target="_blank"><img src="{% static 'base/icone-instagram.png' %}"></a></p>
+                <p><a href="https://github.com/ch-soares/" target="_blank"><img src="{% static 'base/icone-github.png' %}" alt=""></a></p>
+                <p><a href="falecomigo.html" target="_blank"><img src="{% static 'base/icone-correspondencia.png' %}" alt=""></a></p>
+            </div>
+        </div>
+        <div class="poema-foto">
+            <p>Sou um tanto de ossos;<br>
+                matéria densa: <br>
+                células, sangue, veias<br>
+                dentro de um corpo. <br>
+                Sou humano; <br>
+                emoção que ousa e pensa: <br>
+                sinapses, filosofia, razão, <br>
+                entendimento. <br>
+                Sou um axioma à espera <br>
+                de um teorema... <br>
+                Sou sentimento! <br>
+                Delírio! <br>
+                Arte... <br>
+                Um poema.
+            </p>
+            <img src="{% static 'base/kiko.jpeg' %}" alt="foto">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Django</title>
+    <link rel="stylesheet" href="{% static 'base/estilos-formularios.css' %}">
+</head>
+<body>
+    <div class="mensagem">
+        <h1>Formulário validado com os recursos do model.form</h1>
+            <form method="post" action="." autocomplete="on">
+                {% csrf_token %}
+                <input type="text" name="nome" placeholder="{{ form.nome.label }}" value="{{ form.nome.data }}"><br><br>
+                    {% for error in form.nome.errors  %}
+                        <p class="erros">{{ error }}</p>
+                    {% endfor %}
+                <input type="email" name="email" placeholder="{{ form.email.label }}" value="{{form.email.data}}"><br><br>
+                    {% for erros in form.email.errors  %}
+                        <p class="erros">{{ erros }}</p>
+                    {% endfor %}
+                <input type="number" name="idade" placeholder="Idade" value="{{dados.idade}}"><br><br>
+                    {% if erros.idade%}
+                        <p class="erros">{{erros.idade}}</p>
+                    {% endif %}
+                <div class="sexo">
+                    <h3>Sexo:</h3>
+                    <label for="">Masculino</label>
+                    <input classe="sexo" class="radio" type="radio" name="sexo" value="Masculino" {% if dados.sexo == 'Masculino' %}checked{% endif %}>
+                    <label for="">Feminino</label>
+                    <input classe="sexo" type="radio" name="sexo" value="Feminino" {% if dados.sexo == 'Feminino' %}checked{% endif %}><br><br>
+                </div>
+                <div class="tecnologias">
+                    <h3>Tecnologias:</h3>
+                    <label for="">Python</label>
+                    <input type="checkbox" name="tecnologias" value="python" {% if 'python' in dados.tecnologias %}checked{% endif %}>
+                    <label for="">Javascript</label>
+                    <input type="checkbox" name="tecnologias" value="javascript" {% if 'javascript' in dados.tecnologias %}checked{% endif %}>
+                    <label for="">Java</label>
+                    <input type="checkbox" name="tecnologias" value="java" {% if 'java' in dados.tecnologias %}checked{% endif %}>
+                    <label for="">Ruby</label>
+                    <input type="checkbox" name="tecnologias" value="ruby" {% if 'ruby' in dados.tecnologias %}checked{% endif %}><br><br>
+                </div>
+                <div class="area-interesse">
+                <h3>Área de interesse:</h3>
+                <select name="area_interesse">
+                    <option value="back" {% if dados.area_interesse == 'back' %}selected{% endif %}>Back-End</option>
+                    <option value="front" {% if dados.area_interesse == 'front' %}selected{% endif %}>Front-End</option>
+                    <option value="dados" {% if dados.area_interesse == 'dados' %}selected{% endif %}>Dados</option>
+                </select><br><br>
+                <textarea name="mensagem" rows='10' placeholder="mensagem">{{dados.mensagem}}</textarea><br><br>
+                <button type="submit">Enviar</button>
+            </form>
+    </div>
+</body>
+</html>
