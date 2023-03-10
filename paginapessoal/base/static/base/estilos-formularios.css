@@ -52,3 +52,7 @@ button {
 .erros {
     color: red;   
 }
+
+div {
+    margin: 10px;
+}

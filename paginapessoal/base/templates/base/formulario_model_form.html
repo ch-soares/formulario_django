@@ -13,45 +13,61 @@
         <h1>Formulário validado com os recursos do model.form</h1>
             <form method="post" action="." autocomplete="on">
                 {% csrf_token %}
-                <input type="text" name="nome" placeholder="{{ form.nome.label }}" value="{{ form.nome.data }}"><br><br>
-                    {% for error in form.nome.errors  %}
-                        <p class="erros">{{ error }}</p>
+<!--                Início de campos de preencimento obrigatórios-->
+                <div>
+                <input type="text" name="nome"
+                   placeholder="{{ form.nome.label }}" value="{% if form.nome.data %}{{ form.nome.data }}{% endif %}">
+                    {% for erros in form.nome.data.errors  %}
+                        <p class="erros">{{ erros }}</p>
                     {% endfor %}
-                <input type="email" name="email" placeholder="{{ form.email.label }}" value="{{form.email.data}}"><br><br>
+                </div>
+                <div>
+                <input type="email" name="email"
+                   placeholder="{{ form.email.label }}" value="{% if form.email.data %}{{form.email.data}}{% endif %}">
                     {% for erros in form.email.errors  %}
                         <p class="erros">{{ erros }}</p>
                     {% endfor %}
-                <input type="number" name="idade" placeholder="Idade" value="{{dados.idade}}"><br><br>
-                    {% if erros.idade%}
-                        <p class="erros">{{erros.idade}}</p>
-                    {% endif %}
-                <div class="sexo">
-                    <h3>Sexo:</h3>
-                    <label for="">Masculino</label>
-                    <input classe="sexo" class="radio" type="radio" name="sexo" value="Masculino" {% if dados.sexo == 'Masculino' %}checked{% endif %}>
-                    <label for="">Feminino</label>
-                    <input classe="sexo" type="radio" name="sexo" value="Feminino" {% if dados.sexo == 'Feminino' %}checked{% endif %}><br><br>
                 </div>
-                <div class="tecnologias">
-                    <h3>Tecnologias:</h3>
-                    <label for="">Python</label>
-                    <input type="checkbox" name="tecnologias" value="python" {% if 'python' in dados.tecnologias %}checked{% endif %}>
-                    <label for="">Javascript</label>
-                    <input type="checkbox" name="tecnologias" value="javascript" {% if 'javascript' in dados.tecnologias %}checked{% endif %}>
-                    <label for="">Java</label>
-                    <input type="checkbox" name="tecnologias" value="java" {% if 'java' in dados.tecnologias %}checked{% endif %}>
-                    <label for="">Ruby</label>
-                    <input type="checkbox" name="tecnologias" value="ruby" {% if 'ruby' in dados.tecnologias %}checked{% endif %}><br><br>
+                <div>
+                <input type="number" name="idade" placeholder="{{ form.idade.label }}" value="{{form.idade.data}}">
+                    {% for erros in form.idade.errors  %}
+                        <p class="erros">{{ erros }}</p>
+                    {% endfor %}
                 </div>
-                <div class="area-interesse">
-                <h3>Área de interesse:</h3>
-                <select name="area_interesse">
-                    <option value="back" {% if dados.area_interesse == 'back' %}selected{% endif %}>Back-End</option>
-                    <option value="front" {% if dados.area_interesse == 'front' %}selected{% endif %}>Front-End</option>
-                    <option value="dados" {% if dados.area_interesse == 'dados' %}selected{% endif %}>Dados</option>
-                </select><br><br>
-                <textarea name="mensagem" rows='10' placeholder="mensagem">{{dados.mensagem}}</textarea><br><br>
+                <div>
+                <textarea name="mensagem" rows='10'
+                    placeholder="{{form.mensagem.label}}">{% if form.mensagem.data %}{{ form.mensagem.data}}{% endif %}</textarea>
+                </div>
                 <button type="submit">Enviar</button>
+<!--                Fim de campos de preencimento obrigatórios-->
+
+<!--                A partir daqui está em desenvolvimento-->
+
+<!--                <div class="sexo">-->
+<!--                    <h3>Sexo:</h3>-->
+<!--                    <label for="">Masculino</label>-->
+<!--                    <input classe="sexo" class="radio" type="radio" name="sexo" value="Masculino" {% if dados.sexo == 'Masculino' %}checked{% endif %}>-->
+<!--                    <label for="">Feminino</label>-->
+<!--                    <input classe="sexo" type="radio" name="sexo" value="Feminino" {% if dados.sexo == 'Feminino' %}checked{% endif %}><br><br>-->
+<!--                </div>-->
+<!--                <div class="tecnologias">-->
+<!--                    <h3>Tecnologias:</h3>-->
+<!--                    <label for="">Python</label>-->
+<!--                    <input type="checkbox" name="tecnologias" value="python" {% if 'python' in dados.tecnologias %}checked{% endif %}>-->
+<!--                    <label for="">Javascript</label>-->
+<!--                    <input type="checkbox" name="tecnologias" value="javascript" {% if 'javascript' in dados.tecnologias %}checked{% endif %}>-->
+<!--                    <label for="">Java</label>-->
+<!--                    <input type="checkbox" name="tecnologias" value="java" {% if 'java' in dados.tecnologias %}checked{% endif %}>-->
+<!--                    <label for="">Ruby</label>-->
+<!--                    <input type="checkbox" name="tecnologias" value="ruby" {% if 'ruby' in dados.tecnologias %}checked{% endif %}><br><br>-->
+<!--                </div>-->
+<!--                <div class="area-interesse">-->
+<!--                <h3>Área de interesse:</h3>-->
+<!--                <select name="area_interesse">-->
+<!--                    <option value="back" {% if dados.area_interesse == 'back' %}selected{% endif %}>Back-End</option>-->
+<!--                    <option value="front" {% if dados.area_interesse == 'front' %}selected{% endif %}>Front-End</option>-->
+<!--                    <option value="dados" {% if dados.area_interesse == 'dados' %}selected{% endif %}>Dados</option>-->
+<!--                </select><br><br>-->
             </form>
     </div>
 </body>
