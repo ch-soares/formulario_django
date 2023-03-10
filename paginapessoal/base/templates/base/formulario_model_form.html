@@ -16,27 +16,32 @@
 <!--                Início de campos de preencimento obrigatórios-->
                 <div>
                 <input type="text" name="nome"
-                   placeholder="{{ form.nome.label }}" value="{% if form.nome.data %}{{ form.nome.data }}{% endif %}">
+                   placeholder="{{ form.nome.label }}"
+                   value="{% if form.nome.data %}{{ form.nome.data }}{% endif %}">
                     {% for erros in form.nome.data.errors  %}
                         <p class="erros">{{ erros }}</p>
                     {% endfor %}
                 </div>
                 <div>
                 <input type="email" name="email"
-                   placeholder="{{ form.email.label }}" value="{% if form.email.data %}{{form.email.data}}{% endif %}">
+                   placeholder="{{ form.email.label }}"
+                   value="{% if form.email.data %}{{form.email.data}}{% endif %}">
                     {% for erros in form.email.errors  %}
                         <p class="erros">{{ erros }}</p>
                     {% endfor %}
                 </div>
                 <div>
-                <input type="number" name="idade" placeholder="{{ form.idade.label }}" value="{{form.idade.data}}">
+                <input type="number" name="idade"
+                   placeholder="{{ form.idade.label }}"
+                   value="{{form.idade.data}}">
                     {% for erros in form.idade.errors  %}
                         <p class="erros">{{ erros }}</p>
                     {% endfor %}
                 </div>
                 <div>
                 <textarea name="mensagem" rows='10'
-                    placeholder="{{form.mensagem.label}}">{% if form.mensagem.data %}{{ form.mensagem.data}}{% endif %}</textarea>
+                    placeholder="{{form.mensagem.label}}"
+                    >{% if form.mensagem.data %}{{ form.mensagem.data}}{% endif %}</textarea>
                 </div>
                 <button type="submit">Enviar</button>
 <!--                Fim de campos de preencimento obrigatórios-->

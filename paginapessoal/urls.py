@@ -18,7 +18,7 @@ from django.urls import path
 import paginapessoal.base.views
 
 urlpatterns = [
-    path('formulario_sem_model_form/', paginapessoal.base.views.formulario_validado_manualmente),
     path('', paginapessoal.base.views.formulario_model_form),
+    path('formulario_sem_model_form/', paginapessoal.base.views.formulario_validado_manualmente),
     path('admin/', admin.site.urls),
 ]

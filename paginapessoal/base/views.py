@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from paginapessoal.base.forms import CadastroForm
 
 
 def formulario_validado_manualmente(request):
+    ''' Formulário validado manualmente, sem o uso dos recursos do django forms'''
+
     dados = {}
     chaves = ['nome', 'email', 'idade', 'sexo', 'tecnologias', 'area_interesse', 'mensagem']
     campos_obrigatorios = {'nome', 'email', 'idade'}
@@ -29,9 +31,12 @@ def formulario_validado_manualmente(request):
 
 
 def formulario_model_form(request):
+    ''' Formulário validado e com recursos do django forms'''
+
     if request == 'POST':
         form = CadastroForm(request.POST)
         if not form.is_valid():
             return render(request, 'base/formulario_model_form.html', {'form': form})
+        redirect('https://www.google.com')
     form = CadastroForm()
     return render(request, 'base/formulario_model_form.html', {'form': form})
